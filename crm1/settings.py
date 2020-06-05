@@ -20,9 +20,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'cz=&%f*9(d*zo$_55p=(p)(eki#p$pb^0159-)8k^6$9c3l&_b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['feiwangsioc-crm1.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -35,9 +35,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'accounts',
+    'accounts.apps.AccountsConfig',
 
     'django_filters',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -76,8 +77,18 @@ WSGI_APPLICATION = 'crm1.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'DEMO_TEST',
+        'USER':'feiwangsioc',
+        'PASSWORD':'wang2033730',
+        'HOST':'localhost',
+        'PORT':'5432'
+
+
+
+        
     }
 }
 
@@ -125,3 +136,60 @@ MEDIA_URL = '/images/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'baolongtougu.sioc@gmail.com'
+# EMAIL_HOST_PASSWORD = 'wang2033730'
+
+
+
+# #S3 BUCKETS CONFIG
+
+# AWS_ACCESS_KEY_ID = 'AKIAUVZ354E5PPP7HPCL'
+# AWS_SECRET_ACCESS_KEY = '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'
+# AWS_STORAGE_BUCKET_NAME = 'feiwangsioc-crm1-bucket'
+# AWS_S3_FILE_OVERWRITE = False
+# AWS_DEFAULT_ACL = None
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+
+
+'''
+<?xml version="1.0" encoding="UTF-8"?>
+<CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+<CORSRule>
+    <AllowedOrigin>*</AllowedOrigin>
+    <AllowedMethod>GET</AllowedMethod>
+    <AllowedMethod>POST</AllowedMethod>
+    <AllowedMethod>PUT</AllowedMethod>
+    <AllowedHeader>*</AllowedHeader>
+</CORSRule>
+</CORSConfiguration>
+'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
