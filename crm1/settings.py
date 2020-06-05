@@ -139,24 +139,7 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
-# EMAIL_HOST_USER = 'baolongtougu.sioc@gmail.com'
-# EMAIL_HOST_PASSWORD = 'wang2033730'
 
-
-
-# #S3 BUCKETS CONFIG
-
-# AWS_ACCESS_KEY_ID = 'AKIAUVZ354E5PPP7HPCL'
-# AWS_SECRET_ACCESS_KEY = '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'
-# AWS_STORAGE_BUCKET_NAME = 'feiwangsioc-crm1-bucket'
-# AWS_S3_FILE_OVERWRITE = False
-# AWS_DEFAULT_ACL = None
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
 
